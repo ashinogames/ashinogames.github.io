@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><link rel="icon" type="image/png" href="favicon.png">Ashino Games</title>
-
+  <title>Ashino Games</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -28,7 +28,12 @@
       width:76px; height:76px; margin:0 auto 16px; display:grid; place-items:center;
       border-radius:16px; background:#121212; box-shadow:0 0 0 1px #ffffff10, 0 12px 30px #00000066;
     }
-    .logo svg{width:60%; height:60%; color:#fff}
+    .logo img,
+    .logo svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
     h1{font-size:clamp(28px,3.5vw,36px); margin:8px 0 4px; font-weight:800}
     .tagline{color:var(--muted); margin-bottom:28px; font-size:14px}
 
@@ -44,6 +49,10 @@
     .btn:hover{transform:translateY(-1px); box-shadow: 0 1px 0 #ffffff0a inset, 0 10px 24px #00000088}
     .btn:active{transform:translateY(0)}
     .btn.ghost{background:#1a1a1a; color:var(--text)}
+    .btn img {
+      width: 32px;
+      height: 32px;
+    }
 
     .socials{display:flex; gap:14px; justify-content:center; margin-top:18px; flex-wrap:wrap}
     .socials a{
@@ -73,11 +82,11 @@
 
     <div class="links">
       <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">
-        <img src="itch-io-black.png" alt="" width="20" height="20">
+        <img src="itch-io-black.png" alt="">
           Our Games
         </a>   
       <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">
-        <img src="itch-io-white.png" alt="" width="20" height="20">
+        <img src="itch-io-white.png" alt="">
           Founder's Portfolio
       </a>
     </div>
