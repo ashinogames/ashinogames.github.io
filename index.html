@@ -37,60 +37,61 @@
     h1{font-size:clamp(28px,3.5vw,36px); margin:8px 0 4px; font-weight:800}
     .tagline{color:var(--muted); margin-bottom:28px; font-size:14px}
 
-    .links{display:grid; gap:14px; margin:0 0 18px}
-    .btn {
-      border: 0;
-      cursor: pointer;
-      width: 100%;
-      padding: 16px 18px;
-      font-size: 16px;
-      font-weight: 600;
-      background: var(--accent);
-      color: var(--accent-text);
+    .links { gap: 16px; margin: 0 0 22px; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:12px;
+      width:100%; min-height:56px; padding:14px 20px;
+    
+      font-size:16px; font-weight:600; letter-spacing:.2px;
+    
+      background: var(--accent); color: var(--accent-text);
       border-radius: var(--button-radius);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
+      border: 1px solid #00000010;
       box-shadow: 0 1px 0 #ffffff0a inset, 0 6px 18px #00000066;
-      transition: transform .12s ease, box-shadow .12s ease;
+    
+      transition: transform .12s ease, box-shadow .12s ease, background .15s ease, border-color .15s ease;
+      text-decoration:none;
     }
     
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 1px 0 #ffffff0a inset, 0 10px 24px #00000088;
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 1px 0 #ffffff0a inset, 0 10px 24px #00000088; }
+    .btn:active{ transform: translateY(0); box-shadow: 0 1px 0 #ffffff0a inset, 0 4px 12px #00000066; }
+    
+    .btn:focus-visible{
+      outline: none;
+      box-shadow: 0 0 0 3px var(--ring), 0 1px 0 #ffffff0a inset, 0 6px 18px #00000066;
     }
     
-    .btn:active {
-      transform: translateY(0);
+    .btn.ghost{
+      background:#171717;
+      color:#fff;
+      border: 1px solid #ffffff1a;
+      box-shadow: 0 1px 0 #00000066 inset, 0 6px 18px #00000080;
+    }
+    .btn.ghost:hover{ background:#1f1f1f; }
+    .btn.ghost:active{ background:#161616; }
+    
+    .btn .icon{
+      width:30px; height:30px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:8px;
+      background:#efefef;    
+      border:1px solid #00000014;
+      box-shadow: 0 0 0 1px #00000008 inset;
+    }
+    .btn.ghost .icon{
+      background:#2a2a2a;          
+      border:1px solid #ffffff26;
     }
     
-    .btn.ghost {
-      background: #1a1a1a;
-      color: var(--text);
+    .btn .icon img{
+      width:20px; height:20px; display:block;
+      vertical-align:middle; 
     }
     
-    .btn .icon {
-      width: 30px;
-      height: 30px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      background: #efefef;
-      box-shadow: inset 0 0 0 1px #00000014;
-    }
-    
-    .btn.ghost .icon {
-      background: #2a2a2a;
-      box-shadow: inset 0 0 0 1px #ffffff26;
-    }
-    
-    .btn .icon img {
-      width: 20px;
-      height: 20px;
-      display: block;
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition:none; }
+      .btn:hover, .btn:active{ transform:none; }
     }
 
     .socials{display:flex; gap:14px; justify-content:center; margin-top:18px; flex-wrap:wrap}
@@ -111,7 +112,6 @@
 </head>
 <body>
   <main class="wrap">
-    <!-- Replace this SVG with your real logo when ready -->
     <div class="logo" aria-label="Ashino Games Logo">
       <img src="logo.svg" alt="Ashino Games Logo" width="60" height="60">
     </div>
@@ -121,16 +121,12 @@
 
     <div class="links">
       <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">
-        <span class="icon">
-          <img src="itch-io-black.png" alt="">
-        </span>
+        <span class="icon"><img src="itch-io-black.png" alt=""></span>
         Our Games
-      </a>   
+      </a>
     
       <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">
-        <span class="icon">
-          <img src="itch-io-white.png" alt="">
-        </span>
+        <span class="icon"><img src="itch-io-white.png" alt=""></span>
         Founder's Portfolio
       </a>
     </div>
