@@ -37,7 +37,7 @@
     h1{font-size:clamp(28px,3.5vw,36px); margin:8px 0 4px; font-weight:800}
     .tagline{color:var(--muted); margin-bottom:28px; font-size:14px}
 
-    .links { gap: 16px; margin: 0 0 22px; }
+    .links { display: grid; gap: 16px; margin: 0 0 22px; }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:12px;
@@ -119,17 +119,15 @@
     <h1>Ashino Games</h1>
     <p class="tagline">Welcome to Ashino Games</p>
 
-    <div class="links">
-      <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">
-        <span class="icon"><img src="itch-io-black.png" alt=""></span>
-        Our Games
-      </a>
+    <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">
+      <span class="icon"><img src="itch-io-black.png" alt="" loading="lazy"></span>
+      Our Games
+    </a>
     
-      <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">
-        <span class="icon"><img src="itch-io-white.png" alt=""></span>
-        Founder's Portfolio
-      </a>
-    </div>
+    <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">
+      <span class="icon"><img src="itch-io-white.png" alt="" loading="lazy"></span>
+      Founder's Portfolio
+    </a>
 
     <nav class="socials" aria-label="Social links">
       <!-- Instagram -->
