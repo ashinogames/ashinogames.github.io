@@ -1,168 +1,173 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ashino Games — Microsite</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ashino Games — Microsite</title>
 
-    <!-- Optional: clean, readable font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
-    <style>
-      :root{
-        --bg: #0a0a0a;
-        --text: #f6f6f6;
-        --muted: #a3a3a3;
-        --accent: #ffffff; /* button background */
-        --accent-text: #0a0a0a; /* button text */
-        --ring: #ffffff33; /* focus ring */
-        --card: #101010;
-        --button-radius: 16px;
-        --icon-size: 44px; /* social icons */
-        --max-width: 560px; /* content width */
-      }
+  <style>
+    :root{
+      --bg:#0a0a0a; --text:#f6f6f6; --muted:#a3a3a3;
+      --accent:#ffffff; --accent-text:#0a0a0a; --ring:#ffffff33;
+      --button-radius:16px; --icon-size:44px; --max-width:560px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans";
+      color:var(--text);
+      background: radial-gradient(1200px 1200px at 50% -10%, #151515 0, var(--bg) 35%);
+      display:grid; place-items:center; line-height:1.6;
+    }
+    .wrap{width:100%; max-width:var(--max-width); padding:48px 20px 64px; text-align:center}
+    .logo{
+      width:76px; height:76px; margin:0 auto 16px; display:grid; place-items:center;
+      border-radius:16px; background:#121212; box-shadow:0 0 0 1px #ffffff10, 0 12px 30px #00000066;
+    }
+    .logo svg{width:60%; height:60%; color:#fff}
+    h1{font-size:clamp(28px,3.5vw,36px); margin:8px 0 4px; font-weight:800}
+    .tagline{color:var(--muted); margin-bottom:28px; font-size:14px}
 
-      * { box-sizing: border-box; }
-      html, body { height: 100%; }
-      body{
-        margin: 0;
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-        color: var(--text);
-        background: radial-gradient(1200px 1200px at 50% -10%, #151515 0, var(--bg) 35%);
-        display: grid;
-        place-items: center;
-        line-height: 1.6;
-      }
+    .links{display:grid; gap:14px; margin:0 0 18px}
+    .btn{
+      border:0; cursor:pointer; width:100%; padding:16px 18px;
+      font-size:16px; font-weight:600; background:var(--accent); color:var(--accent-text);
+      border-radius:var(--button-radius); text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      box-shadow: 0 1px 0 #ffffff0a inset, 0 6px 18px #00000066;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow: 0 1px 0 #ffffff0a inset, 0 10px 24px #00000088}
+    .btn:active{transform:translateY(0)}
+    .btn.ghost{background:#1a1a1a; color:var(--text)}
 
-      .wrap{
-        width: 100%;
-        max-width: var(--max-width);
-        padding: 48px 20px 64px;
-        text-align: center;
-      }
+    .socials{display:flex; gap:14px; justify-content:center; margin-top:18px; flex-wrap:wrap}
+    .socials a{
+      width:var(--icon-size); height:var(--icon-size); border-radius:999px; background:#1a1a1a;
+      display:grid; place-items:center; color:var(--text); text-decoration:none;
+      box-shadow: 0 0 0 1px #ffffff0f inset, 0 6px 16px #00000050;
+      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+    }
+    .socials a:hover{transform:translateY(-1px); background:#222; box-shadow:0 0 0 1px #ffffff22 inset, 0 10px 24px #0000006e}
+    .socials svg{width:22px; height:22px; fill:currentColor}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 
-      /* Logo */
-      .logo{
-        width: 76px; height: 76px; margin: 0 auto 16px; display: grid; place-items: center;
-        border-radius: 16px; background: #121212; box-shadow: 0 0 0 1px #ffffff10, 0 12px 30px #00000066;
-      }
-      .logo img{ width: 70%; height: 70%; object-fit: contain; filter: invert(1); }
-      .logo .placeholder{ font-weight: 800; letter-spacing: .06em; font-size: 13px; color: var(--muted); }
+    footer{margin-top:36px; color:var(--muted); font-size:12px; opacity:.85}
+    footer a{color:var(--text); opacity:.9; text-decoration:none}
+    footer a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <!-- Replace this SVG with your real logo when ready -->
+    <div class="logo" aria-label="Ashino Games Logo">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <title>Logo placeholder</title>
+        <rect x="20" y="20" width="60" height="60" rx="10" fill="currentColor"></rect>
+      </svg>
+    </div>
 
-      h1{ font-size: clamp(28px, 3.5vw, 36px); margin: 8px 0 4px; font-weight: 800; }
-      .tagline{ color: var(--muted); margin-bottom: 28px; font-size: 14px; }
+    <h1>Ashino Games</h1>
+    <p class="tagline">Welcome to Ashino Games</p>
 
-      /* Big CTA buttons */
-      .links{ display: grid; gap: 14px; margin: 0 0 18px; }
-      .btn{
-        appearance: none; border: 0; cursor: pointer;
-        width: 100%;
-        padding: 16px 18px;
-        font-size: 16px; font-weight: 600;
-        background: var(--accent); color: var(--accent-text);
-        border-radius: var(--button-radius);
-        box-shadow: 0 1px 0 #ffffff0a inset, 0 6px 18px #00000066;
-        transform: translateY(0);
-        transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease, background .2s ease;
-        text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      }
-      .btn:hover{ transform: translateY(-1px); box-shadow: 0 1px 0 #ffffff0a inset, 0 10px 24px #00000088; }
-      .btn:active{ transform: translateY(0); box-shadow: 0 1px 0 #ffffff0a inset, 0 4px 12px #00000066; }
-      .btn:focus-visible{ outline: none; box-shadow: 0 0 0 4px var(--ring); }
+    <div class="links">
+      <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">Our Games</a>
+      <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">Founder's Portfolio</a>
+    </div>
 
-      /* Optional button variants */
-      .btn.ghost{ background: #1a1a1a; color: var(--text); }
-      .btn.ghost:hover{ background: #222; }
+    <!-- Socials (inline SVG; all use currentColor) -->
+    <nav class="socials" aria-label="Social links">
+      <!-- Instagram -->
+      <a href="https://instagram.com/ashinogames" target="_blank" rel="noopener" aria-label="Instagram">
+        <span class="sr-only">Instagram</span>
+        <svg viewBox="0 0 448 512" role="img" aria-hidden="true">
+          <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+        </svg>
+      </a>
 
-      /* Social row */
-      .socials{ display: flex; gap: 14px; justify-content: center; margin-top: 18px; flex-wrap: wrap; }
-      .socials a{
-        width: var(--icon-size); height: var(--icon-size);
-        border-radius: 999px; background: #1a1a1a; display: grid; place-items: center;
-        box-shadow: 0 0 0 1px #ffffff0f inset, 0 6px 16px #00000050;
-        text-decoration: none;
-        transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
-      }
-      .socials a:hover{ transform: translateY(-1px); background: #222; box-shadow: 0 0 0 1px #ffffff22 inset, 0 10px 24px #0000006e; }
+      <!-- X / Twitter -->
+      <a href="https://x.com/AshinoGames" target="_blank" rel="noopener" aria-label="X">
+        <span class="sr-only">X</span>
+        <svg viewBox="0 0 512 512" role="img" aria-hidden="true">
+          <path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+        </svg>
+      </a>
 
-      .icon-img{ width: 22px; height: 22px; object-fit: contain; filter: invert(1); opacity: .9; }
-      .icon-fallback{ font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .06em; }
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@ashino.games" target="_blank" rel="noopener" aria-label="TikTok">
+        <span class="sr-only">TikTok</span>
+        <svg viewBox="0 0 448 512" role="img" aria-hidden="true">
+          <path fill="currentColor" d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path>
+        </svg>
+      </a>
 
-      /* Footer note */
-      footer{ margin-top: 36px; color: var(--muted); font-size: 12px; opacity: .85; }
-      footer a{ color: var(--text); opacity:.9; text-decoration: none; }
-      footer a:hover{ text-decoration: underline; }
+      <!-- Website -->
+      <a href="https://ashinogames.com/" target="_blank" rel="noopener" aria-label="Website">
+        <span class="sr-only">Website</span>
+        <svg viewBox="0 0 512 512" role="img" aria-hidden="true">
+          <path fill="currentColor" d="M51.7 295.1l31.7 6.3c7.9 1.6 16-.9 21.7-6.6l15.4-15.4c11.6-11.6 31.1-8.4 38.4 6.2l9.3 18.5c4.8 9.6 14.6 15.7 25.4 15.7c15.2 0 26.1-14.6 21.7-29.2l-6-19.9c-4.6-15.4 6.9-30.9 23-30.9l2.3 0c13.4 0 25.9-6.7 33.3-17.8l10.7-16.1c5.6-8.5 5.3-19.6-.8-27.7l-16.1-21.5c-10.3-13.7-3.3-33.5 13.4-37.7l17-4.3c7.5-1.9 13.6-7.2 16.5-14.4l16.4-40.9C303.4 52.1 280.2 48 256 48C141.1 48 48 141.1 48 256c0 13.4 1.3 26.5 3.7 39.1zm407.7 4.6c-3-.3-6-.1-9 .8l-15.8 4.4c-6.7 1.9-13.8-.9-17.5-6.7l-2-3.1c-6-9.4-16.4-15.1-27.6-15.1s-21.6 5.7-27.6 15.1l-6.1 9.5c-1.4 2.2-3.4 4.1-5.7 5.3L312 330.1c-18.1 10.1-25.5 32.4-17 51.3l5.5 12.4c8.6 19.2 30.7 28.5 50.5 21.1l2.6-1c10-3.7 21.3-2.2 29.9 4.1l1.5 1.1c37.2-29.5 64.1-71.4 74.4-119.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm144.5 92.1c-2.1 8.6 3.1 17.3 11.6 19.4l32 8c8.6 2.1 17.3-3.1 19.4-11.6s-3.1-17.3-11.6-19.4l-32-8c-8.6-2.1-17.3 3.1-19.4 11.6zm92-20c-2.1 8.6 3.1 17.3 11.6 19.4s17.3-3.1 19.4-11.6l8-32c2.1-8.6-3.1-17.3-11.6-19.4s-17.3 3.1-19.4 11.6l-8 32zM343.2 113.7c-7.9-4-17.5-.7-21.5 7.2l-16 32c-4 7.9-.7 17.5 7.2 21.5s17.5 .7 21.5-7.2l16-32c4-7.9 .7-17.5-7.2-21.5z"></path>
+        </svg>
+      </a>
 
-      /* Small helper: center the whole column a bit lower on tall screens */
-      @media (min-height: 820px){ .wrap{ padding-top: 72px; } }
-    </style>
-  </head>
-  <body>
-    <main class="wrap">
-      <!-- LOGO: Replace the placeholder span with your logo image (transparent PNG/SVG). -->
-      <div class="logo" aria-label="Ashino Games Logo">
-        <!-- Example: <img src="assets/logo.svg" alt="Ashino Games" /> -->
-        <span class="placeholder">LOGO</span>
-      </div>
+      <!-- YouTube -->
+      <a href="https://youtube.com/@ashinogames" target="_blank" rel="noopener" aria-label="YouTube">
+        <span class="sr-only">YouTube</span>
+        <svg viewBox="0 0 576 512" role="img" aria-hidden="true">
+          <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+        </svg>
+      </a>
 
-      <h1>Ashino Games</h1>
-      <p class="tagline">Welcome to Ashino Games</p>
+      <!-- Discord (placeholder) -->
+      <a href="#" target="_blank" rel="noopener" aria-label="Discord">
+        <span class="sr-only">Discord</span>
+        <svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+          <title>Discord placeholder</title>
+          <circle cx="50" cy="50" r="40" fill="currentColor"></circle>
+        </svg>
+      </a>
+    </nav>
 
-      <!-- Primary CTAs (edit href targets) -->
-      <div class="links">
-        <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">Our Games</a>
-        <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">Founder's Portfolio</a>
-      </div>
+    <footer>
+      © <span id="year"></span> Ashino Games • Built with ♥ on GitHub Pages
+    </footer>
+  </main>
 
-      <!-- Socials row. Replace icon src with your images later (SVG/PNG). Keep the <span> for fallback text. -->
-      <nav class="socials" aria-label="Social links">
-        <a href="https://instagram.com/ashinogames" target="_blank" rel="noopener" aria-label="Instagram">
-          <img class="icon-img" src="icons/instagram.svg" alt="Instagram" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';this.replaceWith;" />
-          <span class="icon-fallback" aria-hidden="true">IG</span>
-        </a>
-        <a href="https://x.com/AshinoGames" target="_blank" rel="noopener" aria-label="X (Twitter)">
-          <img class="icon-img" src="icons/x.svg" alt="X" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
-          <span class="icon-fallback" aria-hidden="true">X</span>
-        </a>
-        <a href="https://tiktok.com/@ashino.games" target="_blank" rel="noopener" aria-label="TikTok">
-          <img class="icon-img" src="icons/tiktok.svg" alt="TikTok" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
-          <span class="icon-fallback" aria-hidden="true">TT</span>
-        </a>
-        <a href="https://ashinogames.com/" target="_blank" rel="noopener" aria-label="Website">
-          <img class="icon-img" src="icons/link.svg" alt="Website" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
-          <span class="icon-fallback" aria-hidden="true">WWW</span>
-        </a>
-        <a href="https://youtube.com/@ashinogames" target="_blank" rel="noopener" aria-label="YouTube">
-          <img class="icon-img" src="icons/youtube.svg" alt="YouTube" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
-          <span class="icon-fallback" aria-hidden="true">YT</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener" aria-label="Discord">
-          <img class="icon-img" src="icons/discord.svg" alt="Discord" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
-          <span class="icon-fallback" aria-hidden="true">DC</span>
-        </a>
-      </nav>
+  <script>
+    // Simple behavior
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      <footer>
-        <span>© <span id="year"></span> Ashino Games • Built with ♥ on GitHub Pages</span>
-      </footer>
-    </main>
+    // --- Minimal “tests” (console) ---
+    (function runSmokeTests(){
+      const tests = [];
+      const $ = (sel) => document.querySelector(sel);
 
-    <script>
-      // Auto year
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // Hide fallback labels when images load successfully
-      document.querySelectorAll('.socials a').forEach(a => {
-        const img = a.querySelector('img');
-        const fallback = a.querySelector('.icon-fallback');
-        if(!img) return;
-        function toggle(){ fallback.style.display = img.complete && img.naturalWidth ? 'none' : 'inline-block'; }
-        img.addEventListener('load', toggle);
-        img.addEventListener('error', toggle);
-        toggle();
+      tests.push({
+        name: "Page title exists",
+        pass: document.title.includes("Ashino Games")
       });
-    </script>
-  </body>
+      tests.push({
+        name: "Primary buttons present",
+        pass: document.querySelectorAll('.btn').length === 2
+      });
+      tests.push({
+        name: "Social icons count",
+        pass: document.querySelectorAll('.socials a svg').length === 6
+      });
+      tests.push({
+        name: "SVGs have paths/circle",
+        pass: Array.from(document.querySelectorAll('.socials svg')).every(svg => svg.querySelector('path, circle'))
+      });
+
+      const ok = tests.every(t => t.pass);
+      console.group("Microsite tests");
+      tests.forEach(t => console[t.pass ? 'log' : 'error'](`${t.pass ? '✓' : '✗'} ${t.name}`));
+      console[ok ? 'log' : 'error'](`Overall: ${ok ? 'PASS' : 'FAIL'}`);
+      console.groupEnd();
+    })();
+  </script>
+</body>
 </html>
