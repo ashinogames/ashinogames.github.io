@@ -38,20 +38,27 @@
     .tagline{color:var(--muted); margin-bottom:28px; font-size:14px}
 
     .links{display:grid; gap:14px; margin:0 0 18px}
-    .btn{
-      border:0; cursor:pointer; width:100%; padding:16px 18px;
-      font-size:16px; font-weight:600; background:var(--accent); color:var(--accent-text);
-      border-radius:var(--button-radius); text-decoration:none;
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      box-shadow: 0 1px 0 #ffffff0a inset, 0 6px 18px #00000066;
-      transition: transform .12s ease, box-shadow .12s ease;
+    .btn { gap: 12px; }
+    .btn .icon {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #efefef;
+      box-shadow: inset 0 0 0 1px #00000014;
     }
-    .btn:hover{transform:translateY(-1px); box-shadow: 0 1px 0 #ffffff0a inset, 0 10px 24px #00000088}
-    .btn:active{transform:translateY(0)}
-    .btn.ghost{background:#1a1a1a; color:var(--text)}
-    .btn img {
-      width: 32px;
-      height: 32px;
+    .btn .icon img {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+    
+
+    .btn.ghost .icon {
+      background: #2a2a2a;
+      box-shadow: inset 0 0 0 1px #ffffff26;
     }
 
     .socials{display:flex; gap:14px; justify-content:center; margin-top:18px; flex-wrap:wrap}
@@ -82,16 +89,20 @@
 
     <div class="links">
       <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">
-        <img src="itch-io-black.png" alt="">
-          Our Games
-        </a>   
+        <span class="icon">
+          <img src="itch-io-black.png" alt="">
+        </span>
+        Our Games
+      </a>
+    
       <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">
-        <img src="itch-io-white.png" alt="">
-          Founder's Portfolio
+        <span class="icon">
+          <img src="itch-io-white.png" alt="">
+        </span>
+        Founder's Portfolio
       </a>
     </div>
 
-    <!-- Socials (inline SVG; all use currentColor) -->
     <nav class="socials" aria-label="Social links">
       <!-- Instagram -->
       <a href="https://instagram.com/ashinogames" target="_blank" rel="noopener" aria-label="Instagram">
@@ -149,10 +160,9 @@
   </main>
 
   <script>
-    // Simple behavior
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- Minimal “tests” (console) ---
+
     (function runSmokeTests(){
       const tests = [];
       const $ = (sel) => document.querySelector(sel);
