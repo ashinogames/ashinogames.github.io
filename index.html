@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ashino Games — Microsite</title>
+
+    <!-- Optional: clean, readable font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+      :root{
+        --bg: #0a0a0a;
+        --text: #f6f6f6;
+        --muted: #a3a3a3;
+        --accent: #ffffff; /* button background */
+        --accent-text: #0a0a0a; /* button text */
+        --ring: #ffffff33; /* focus ring */
+        --card: #101010;
+        --button-radius: 16px;
+        --icon-size: 44px; /* social icons */
+        --max-width: 560px; /* content width */
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body{
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 1200px at 50% -10%, #151515 0, var(--bg) 35%);
+        display: grid;
+        place-items: center;
+        line-height: 1.6;
+      }
+
+      .wrap{
+        width: 100%;
+        max-width: var(--max-width);
+        padding: 48px 20px 64px;
+        text-align: center;
+      }
+
+      /* Logo */
+      .logo{
+        width: 76px; height: 76px; margin: 0 auto 16px; display: grid; place-items: center;
+        border-radius: 16px; background: #121212; box-shadow: 0 0 0 1px #ffffff10, 0 12px 30px #00000066;
+      }
+      .logo img{ width: 70%; height: 70%; object-fit: contain; filter: invert(1); }
+      .logo .placeholder{ font-weight: 800; letter-spacing: .06em; font-size: 13px; color: var(--muted); }
+
+      h1{ font-size: clamp(28px, 3.5vw, 36px); margin: 8px 0 4px; font-weight: 800; }
+      .tagline{ color: var(--muted); margin-bottom: 28px; font-size: 14px; }
+
+      /* Big CTA buttons */
+      .links{ display: grid; gap: 14px; margin: 0 0 18px; }
+      .btn{
+        appearance: none; border: 0; cursor: pointer;
+        width: 100%;
+        padding: 16px 18px;
+        font-size: 16px; font-weight: 600;
+        background: var(--accent); color: var(--accent-text);
+        border-radius: var(--button-radius);
+        box-shadow: 0 1px 0 #ffffff0a inset, 0 6px 18px #00000066;
+        transform: translateY(0);
+        transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease, background .2s ease;
+        text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      }
+      .btn:hover{ transform: translateY(-1px); box-shadow: 0 1px 0 #ffffff0a inset, 0 10px 24px #00000088; }
+      .btn:active{ transform: translateY(0); box-shadow: 0 1px 0 #ffffff0a inset, 0 4px 12px #00000066; }
+      .btn:focus-visible{ outline: none; box-shadow: 0 0 0 4px var(--ring); }
+
+      /* Optional button variants */
+      .btn.ghost{ background: #1a1a1a; color: var(--text); }
+      .btn.ghost:hover{ background: #222; }
+
+      /* Social row */
+      .socials{ display: flex; gap: 14px; justify-content: center; margin-top: 18px; flex-wrap: wrap; }
+      .socials a{
+        width: var(--icon-size); height: var(--icon-size);
+        border-radius: 999px; background: #1a1a1a; display: grid; place-items: center;
+        box-shadow: 0 0 0 1px #ffffff0f inset, 0 6px 16px #00000050;
+        text-decoration: none;
+        transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+      }
+      .socials a:hover{ transform: translateY(-1px); background: #222; box-shadow: 0 0 0 1px #ffffff22 inset, 0 10px 24px #0000006e; }
+
+      .icon-img{ width: 22px; height: 22px; object-fit: contain; filter: invert(1); opacity: .9; }
+      .icon-fallback{ font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .06em; }
+
+      /* Footer note */
+      footer{ margin-top: 36px; color: var(--muted); font-size: 12px; opacity: .85; }
+      footer a{ color: var(--text); opacity:.9; text-decoration: none; }
+      footer a:hover{ text-decoration: underline; }
+
+      /* Small helper: center the whole column a bit lower on tall screens */
+      @media (min-height: 820px){ .wrap{ padding-top: 72px; } }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <!-- LOGO: Replace the placeholder span with your logo image (transparent PNG/SVG). -->
+      <div class="logo" aria-label="Ashino Games Logo">
+        <!-- Example: <img src="assets/logo.svg" alt="Ashino Games" /> -->
+        <span class="placeholder">LOGO</span>
+      </div>
+
+      <h1>Ashino Games</h1>
+      <p class="tagline">Welcome to Ashino Games</p>
+
+      <!-- Primary CTAs (edit href targets) -->
+      <div class="links">
+        <a class="btn" href="https://ashinogames.itch.io/" target="_blank" rel="noopener">Our Games</a>
+        <a class="btn ghost" href="https://solokode.itch.io/" target="_blank" rel="noopener">Founder's Portfolio</a>
+      </div>
+
+      <!-- Socials row. Replace icon src with your images later (SVG/PNG). Keep the <span> for fallback text. -->
+      <nav class="socials" aria-label="Social links">
+        <a href="https://instagram.com/ashinogames" target="_blank" rel="noopener" aria-label="Instagram">
+          <img class="icon-img" src="icons/instagram.svg" alt="Instagram" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';this.replaceWith;" />
+          <span class="icon-fallback" aria-hidden="true">IG</span>
+        </a>
+        <a href="https://x.com/AshinoGames" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <img class="icon-img" src="icons/x.svg" alt="X" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
+          <span class="icon-fallback" aria-hidden="true">X</span>
+        </a>
+        <a href="https://tiktok.com/@ashino.games" target="_blank" rel="noopener" aria-label="TikTok">
+          <img class="icon-img" src="icons/tiktok.svg" alt="TikTok" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
+          <span class="icon-fallback" aria-hidden="true">TT</span>
+        </a>
+        <a href="https://ashinogames.com/" target="_blank" rel="noopener" aria-label="Website">
+          <img class="icon-img" src="icons/link.svg" alt="Website" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
+          <span class="icon-fallback" aria-hidden="true">WWW</span>
+        </a>
+        <a href="https://youtube.com/@ashinogames" target="_blank" rel="noopener" aria-label="YouTube">
+          <img class="icon-img" src="icons/youtube.svg" alt="YouTube" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
+          <span class="icon-fallback" aria-hidden="true">YT</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Discord">
+          <img class="icon-img" src="icons/discord.svg" alt="Discord" onerror="this.replaceWith(document.createElement('span')).className='icon-fallback';" />
+          <span class="icon-fallback" aria-hidden="true">DC</span>
+        </a>
+      </nav>
+
+      <footer>
+        <span>© <span id="year"></span> Ashino Games • Built with ♥ on GitHub Pages</span>
+      </footer>
+    </main>
+
+    <script>
+      // Auto year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Hide fallback labels when images load successfully
+      document.querySelectorAll('.socials a').forEach(a => {
+        const img = a.querySelector('img');
+        const fallback = a.querySelector('.icon-fallback');
+        if(!img) return;
+        function toggle(){ fallback.style.display = img.complete && img.naturalWidth ? 'none' : 'inline-block'; }
+        img.addEventListener('load', toggle);
+        img.addEventListener('error', toggle);
+        toggle();
+      });
+    </script>
+  </body>
+</html>
