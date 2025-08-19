@@ -5,10 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashino Games</title>
   <script>
-    if (location.protocol === 'http:') {
-      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
-    }
+    (function() {
+      let host = location.host;
+      let protocol = location.protocol;
+      let newHost = host;
+  
+      if (!host.startsWith("www.")) {
+        newHost = "www." + host;
+      }
+  
+      if (protocol !== "https:") {
+        protocol = "https:";
+      }
+  
+      if (host !== newHost || location.protocol !== protocol) {
+        location.replace(protocol + "//" + newHost + location.pathname + location.search + location.hash);
+      }
+    })();
   </script>
+
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
