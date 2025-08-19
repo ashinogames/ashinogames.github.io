@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ashino Games Updates</title>
+  <link href="https://ashinogames.com/atom.xml" rel="self" />
+  <link href="https://ashinogames.com/" />
+  <updated>2025-08-19T08:41:17Z</updated>
+  <id>https://ashinogames.com/</id>
+  <author>
+    <name>Ashino Games</name>
+  </author>
+  <entry>
+    <title>Welcome to Ashino Games</title>
+    <link href="https://ashinogames.com/" />
+    <id>https://ashinogames.com/</id>
+    <updated>2025-08-19T08:41:17Z</updated>
+    <summary>Indie studio building small, polished games.</summary>
+  </entry>
+</feed>
