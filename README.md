@@ -4,5 +4,5 @@ Static landing page for Ashino Games hosted on GitHub Pages.
 
 ## Feeds
 
-- [Sitemap](https://ashinogames.com/sitemap.xml)
-- [Atom feed](https://ashinogames.com/atom.xml)
+- [Sitemap](https://www.ashinogames.com/sitemap.xml)
+- [Atom feed](https://www.ashinogames.com/atom.xml)
